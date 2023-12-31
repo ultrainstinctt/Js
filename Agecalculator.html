@@ -1,0 +1,27 @@
+<html>
+
+<head></head>
+<body>
+    <input type="date">
+	    
+    <p>you are__years__months__days old.</p>
+    <script>
+        const input= document.querySelector('input');
+        const p=document.querySelector("p");
+       input.addEventListener("change",()=>{
+
+    
+            const today = new Date();
+            const birth = new Date(input.value);
+            const age = today.getFullYear() - birth.getFullYear();
+            const monthDiff = today.getMonth() - birth.getMonth();
+            const day=today.getDate()-birth.getDate();
+            
+            
+            p.innerText=`you are ${age} years ${monthDiff} months ${day} days old.`
+
+        });
+
+    </script>
+</body>
+</html>
